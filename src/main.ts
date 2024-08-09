@@ -207,7 +207,7 @@ Commit: ${repo_url}/commit/${commit_sha}
 `
     }
 
-    for (let artifact of artifact_list.split(/\s+/)) {
+    for (let artifact of artifact_list.split(",")) {
       artifact = artifact.trim()
 
       core.info(`Processing artifact: ${artifact}`)
