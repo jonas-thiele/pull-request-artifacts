@@ -17,5 +17,5 @@ export function toMarkdown(filename: string, link: string): string {
     isImage = true
   }
 
-  return `${isImage ? '!' : ''}[\`${filename}\`](${link})`
+  return `${isImage ? '!' : ''}[\`${filename}\`](${encodeURI(link)})`
 }

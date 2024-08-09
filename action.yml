@@ -12,7 +12,7 @@ inputs:
     description: 'Token for current repo (used to post PR comment)'
     required: true
   artifacts:
-    description: 'Space-separated list of files to upload'
+    description: 'Directory of the artifacts to upload'
     required: true
   artifacts-token:
     description: 'Token for artifacts repo (if it differs from current repo)'
