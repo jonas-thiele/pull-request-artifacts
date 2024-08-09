@@ -208,7 +208,7 @@ Commit: ${repo_url}/commit/${commit_sha}
     }
 
     for (let artifact of artifact_list.split(",")) {
-      core.info(`Processing artifact ${artifact}`)
+      core.info(`Processing artifact: ${artifact}`)
 
       const content = fs.readFileSync(artifact)
 
