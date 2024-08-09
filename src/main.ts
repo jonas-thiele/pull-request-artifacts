@@ -208,7 +208,8 @@ Commit: ${repo_url}/commit/${commit_sha}
     }
 
     const files = fs.readdirSync(artifacts)
-    for (const artifact of files) {
+    for (const file of files) {
+      const artifact = path.join(artifacts, file)
       core.info(`Processing artifact: ${artifact}`)
 
       const content = fs.readFileSync(artifact)

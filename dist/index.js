@@ -53,7 +53,7 @@ function run() {
         try {
             const commit_sha = core.getInput('commit', { required: true });
             const local_token = core.getInput('repo-token', { required: true });
-            const artifact_list = core.getInput('artifacts', { required: true });
+            const artifacts = core.getInput('artifacts', { required: true });
             let artifacts_token = core.getInput('artifacts-token', { required: false });
             const artifacts_owner_and_repo = core.getInput('artifacts-repo', {
                 required: false
@@ -210,7 +210,8 @@ Commit: ${repo_url}/commit/${commit_sha}
 | ---- | ------ |
 `;
             }
-            for (const artifact of artifact_list.split(',')) {
+            const files = fs.readdirSync(artifacts);
+            for (const artifact of files) {
                 core.info(`Processing artifact: ${artifact}`);
                 const content = fs.readFileSync(artifact);
                 const target_name = preserve_path ? artifact : path_1.default.basename(artifact);
